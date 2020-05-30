@@ -12,7 +12,7 @@ scrapers["www.amazon.com"] = dom => {
 }
 
 scrapers["www.youtube.com"] = dom => {
-	dom.origin = "https://www.youtube.com/watch?v=0SyLqFuf_SU"
-	videoID = dom.orign.substr(32)
+	const orign = dom.orign
+	const videoID = origin.substr(32)
 	return `<iframe src="https://youtube.com/embed/${videoID}"></iframe>`
 }
