@@ -7,8 +7,8 @@
 		{
 		"matches": [ "*://*/*" ],
 		"js": [
-			"main.js",
-			"scrapers.js"
+			"scrapers.js",
+			"main.js"
 		]
 		}
 	]
