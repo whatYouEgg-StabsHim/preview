@@ -4,12 +4,19 @@ scraper.style.height = "200px"
 scraper.style.border = "3px solid #333"
 scraper.style.borderRadius = "6px"
 scraper.style.display = "none"
-scraper.style.position = "sticky"
+scraper.style.position = "absolute"
 scraper.style.overflow = "auto";
 scraper.style.top = "50px";
 scraper.style.left = "50px";
 
 document.body.appendChild(scraper)
+
+document.body.addEventListener("mousemove", event => {
+    y=event.clientY;
+    x=event.clientX;
+    scraper.style.left=(x+5)+"px";
+    scraper.style.top=(y+5)+"px";
+  })
 
 document.body.addEventListener("mouseover", event => {
   scraper.style.display = "none"
@@ -26,7 +33,6 @@ document.body.addEventListener("mouseover", event => {
   fetch("https://api.allorigins.win/get?url=" + url.href)
 	  .then(e => e.json())
 	  .then(html => {
-		  console.log(html)
 		  dom = new DOMParser().parseFromString(html.contents, "text/html")
 		  dom.origin = url
 		  code = scrapers[hostname](dom)
