@@ -9,4 +9,6 @@ Quick no-click website previews for chrome.
 
 ## Compatible Websites
 - YouTube
-- More to come...
+- Wikipedia
+- Github
+- More on the way...
