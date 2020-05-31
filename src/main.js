@@ -26,7 +26,9 @@ document.body.addEventListener("mouseover", event => {
   
   const url = new URL(onlyLinks[0]);
   const hostname = new URL(onlyLinks[0]).hostname;
+  const chost = new URL(window.location.href).hostname;
   if (!scrapers[hostname]) return false
+  if (chost == hostname) return false
 
   scraper.style.display = "block";
   
