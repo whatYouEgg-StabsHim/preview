@@ -11,8 +11,7 @@ scrapers["www.amazon.com"] = dom => {
 	return JSON.stringify({price, name, rating, image})
 }
 
-scrapers["www.youtube.com"] = dom => {
-	const orign = dom.orign
-	const videoID = origin.substr(32)
-	return `<iframe src="https://youtube.com/embed/${videoID}"></iframe>`
+scrapers["www.youtube.com"] = (dom, url) => {
+	const videoID = url.substr(32)
+	return `<iframe src="https://youtube.com/embed/${videoID}/?autoplay=1"></iframe>`
 }
