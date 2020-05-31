@@ -2,7 +2,7 @@
 const scrapers = {}
 
 scrapers["www.youtube.com"] = (dom, url) => {
-	const videoID = url.substr(32)
+	const videoID = url.split("watch?v=")[1]
 	return `<iframe src="https://youtube.com/embed/${videoID}/?autoplay=1"></iframe>`
 }
 scrapers["en.wikipedia.org"] = dom => {
